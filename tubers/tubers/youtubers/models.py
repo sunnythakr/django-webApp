@@ -34,14 +34,7 @@ class Youtuber(models.Model):
     )
 
 
-
-
-
-
-
-
-
-    name = models.CharField(max_length=254)
+    name=models.CharField(max_length=254)
     price = models.IntegerField()
     photo = models.ImageField(upload_to='media/ytubers/%Y/%m')
     video_url = models.CharField(max_length=255)
