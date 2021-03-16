@@ -1,6 +1,7 @@
 from django.db import models
 
 from datetime import datetime 
+
 from ckeditor.fields import RichTextField
 
 
@@ -45,6 +46,6 @@ class Youtuber(models.Model):
     crew =models.CharField(choices=crew_choices, max_length=255)
     camera_type =models.CharField(choices=camera_choices, max_length=255)
     subs_count =models.CharField(max_length=255)
-    category =models.BooleanField(choices=category_choices, default=False)
+    category =models.CharField(choices=category_choices, default=False,max_length=255)
     is_featured =models.BooleanField(default=False)
     created_date =models.DateTimeField(default = datetime.now, blank=True )
