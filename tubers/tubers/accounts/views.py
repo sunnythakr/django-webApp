@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from django.contrib import messages, auth
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -54,11 +55,6 @@ def register(request):
 
 
 
-        # user  =User.objects.create_user(firstname=firstname, lastname=lastname, 
-        # username=username,email=email, password=password)
-        # user.save()
-        # messages.success(request,'Account created Successfully')
-        # return redirect('login')
 
     return render(request,'accounts/register.html')
 
@@ -67,6 +63,8 @@ def logout_user (request):
     logout(request)
     return redirect('home')
 
+
+@login_required(login_url='register')
 def dashboard(request):
     return render(request,'accounts/dashboard.html')
 
