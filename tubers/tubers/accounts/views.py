@@ -15,10 +15,10 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            messages.error(request,'you are logged in ')
+            messages.warning(request,'you are logged in ')
             return redirect('dashboard')
         else:
-            messages.error(request,'invalid credentials')
+            messages.warning(request,'invalid credentials')
             return redirect('login')
 
 
@@ -49,7 +49,7 @@ def register(request):
                      return redirect('login')
 
         else:
-            messages.error(request,'password do not match')
+            messages.warning(request,'password do not match')
             return redirect('register')
 
 
