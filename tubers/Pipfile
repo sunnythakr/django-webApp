@@ -9,6 +9,7 @@ django = "*"
 djangocms-admin-style = "*"
 jinja2 = "*"
 django-ckeditor = "*"
+django-allauth = "*"
 
 [dev-packages]
 
